@@ -1,6 +1,8 @@
-#https://hackernoon.com/learn-blockchains-by-building-one-117428612f46#
+# https://hackernoon.com/learn-blockchains-by-building-one-117428612f46#
 import hashlib
 import json
+from urllib.parse import urlparse
+
 import requests
 from time import time
 from uuid import uuid4
@@ -80,10 +82,12 @@ def register_node(self, address):
     else:
         raise ValueError('Invalid URL')
 
+
 # Generate a globally unique address for this node
 node_identifier = str(uuid4()).replace('-', '')
 
 blockchain = Blockchain()
+
 
 @app.route('/nodes/register', methods=['POST'])
 def register_nodes():
@@ -119,6 +123,7 @@ def consensus():
         }
 
     return jsonify(response), 200
+
 
 # Mining section#
 
@@ -187,7 +192,8 @@ if __name__ == '__main__':
 
     app.run(host='0.0.0.0', port=port)
 
-#Validation#
+
+    # Validation#
     def valid_chain(self, chain):
 
         last_block = chain[0]
