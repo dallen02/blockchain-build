@@ -1,0 +1,8 @@
+How to use (with Postman)
+//I'll update it later today (07/16/2022) - Alivia
+
+Default request url (if running locally): http://127.0.0.1:5000
+
+1. Get requesturl/mine
+    This will mine a new block
+2.
